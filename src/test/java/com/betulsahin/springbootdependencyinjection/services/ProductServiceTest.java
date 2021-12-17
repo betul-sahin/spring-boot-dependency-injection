@@ -3,6 +3,7 @@ package com.betulsahin.springbootdependencyinjection.services;
 import com.betulsahin.springbootdependencyinjection.dto.ProductDto;
 import com.betulsahin.springbootdependencyinjection.models.Product;
 import com.betulsahin.springbootdependencyinjection.repositories.ProductRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -13,16 +14,31 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class ProductServiceTest {
 
-    @Mock
+    /*
+
+    TALIMATLAR
+    - Bu testi calistirip hata alin.
+    - Ardindan ProductService'e gidip ilgili düzenlemeyi yapin. Ve buradaki setup() metodunda ilgili duzenlemeyi yapin.
+    - Testi tekrar calistirip yesil oldugunu gorun.
+
+    Keep coding :)
+
+     */
     ProductRepository mockProductRepository;
 
-    @InjectMocks
     ProductService underTest;
+
+    @BeforeEach
+    void setup(){
+        mockProductRepository = mock(ProductRepository.class);
+        underTest = new ProductService();
+    }
 
     @Test
     void create_shouldRegisterNewProduct(){

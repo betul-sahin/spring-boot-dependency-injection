@@ -13,13 +13,13 @@ import java.util.Optional;
 @Service
 public class ProductService {
 
-    // @Autowired
-    // private ProductRepository productRepository;
-
+    @Autowired
     private ProductRepository productRepository;
+
+    /*private ProductRepository productRepository;
     public ProductService(ProductRepository productRepository){
         this.productRepository = productRepository;
-    }
+    }*/
 
     @Transactional
     public Optional<Product> create(ProductDto request) {
